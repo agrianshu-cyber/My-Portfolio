@@ -37,22 +37,22 @@
             scrollbar-color: rgba(220, 38, 38, 0.5) rgba(255, 255, 255, 0.05);
         }
         .custom-scrollbar::-webkit-scrollbar {
-            height: 6px; /* Sleek and thin */
+            height: 6px; 
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05); /* Faint track */
+            background: rgba(255, 255, 255, 0.05); 
             border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(220, 38, 38, 0.5); /* Red handle */
+            background: rgba(220, 38, 38, 0.5); 
             border-radius: 10px;
             cursor: pointer;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(220, 38, 38, 0.9); /* Brighter red on hover */
+            background: rgba(220, 38, 38, 0.9); 
         }
         
-        /* Hide scrollbar completely ONLY for the no-scrollbar class (used elsewhere) */
+        /* Hide scrollbar completely ONLY for the no-scrollbar class */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -119,10 +119,8 @@
                     <!-- Main Image -->
                     <div class="relative w-full aspect-[4/5] bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-2 z-10 group hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(220,38,38,0.15)] transition-all duration-500 overflow-hidden">
                         <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-[#050505]">
-                            
-                            <!-- Profile Image linked strictly to local folder with .jpeg -->
+                            <!-- Profile Image -->
                             <img src="images/profile/me.jpeg" alt="Anshu Aagri" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700" />
-                            
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 opacity-90"></div>
                         </div>
                         <div class="absolute bottom-6 left-6 right-6 z-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 flex items-center justify-between">
@@ -153,13 +151,11 @@
 
         <!-- Horizontal Scrolling Container -->
         <div class="fade-in relative w-full pt-4 pb-8" style="transition-delay: 200ms;">
-            
-            <!-- Gradient fades on edges -->
             <div class="absolute top-0 bottom-0 left-0 w-16 md:w-[10vw] bg-gradient-to-r from-[#000000] to-transparent z-20 pointer-events-none"></div>
             <div class="absolute top-0 bottom-0 right-0 w-16 md:w-[10vw] bg-gradient-to-l from-[#000000] to-transparent z-20 pointer-events-none"></div>
 
             <div id="scroll-container" class="flex gap-6 md:gap-10 overflow-x-auto custom-scrollbar px-[5vw] pb-8 pt-4">
-               <!-- JavaScript will automatically inject the thumbnails here based on your total number -->
+               <!-- JavaScript will automatically inject the thumbnails here -->
             </div>
         </div>
 
@@ -171,7 +167,7 @@
         </div>
     </section>
 
-    <!-- BEFORE & AFTER SLIDER SECTION -->
+    <!-- BEFORE & AFTER AUTO-SLIDER SECTION -->
     <section id="transformations" class="py-24 md:py-32 relative z-10">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="fade-in text-center mb-16">
@@ -179,108 +175,12 @@
                     Scale your channel <br class="hidden md:block"/>
                     <span class="text-gray-400">with High CTR Thumbnails.</span>
                 </h2>
-                <p class="text-gray-500 text-sm mt-4">Drag the slider to compare raw frames to final thumbnails.</p>
+                <p class="text-gray-500 text-sm mt-4">Real transformations from raw frames to final masterpieces.</p>
             </div>
 
-            <!-- 2x2 Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-                
-                <!-- Transformation 1 -->
-                <div class="fade-in bg-[#0a0a0a] rounded-2xl border border-white/5 p-2 shadow-xl hover:border-red-500/30 transition-colors duration-500">
-                    <div class="bg-[#111] rounded-xl overflow-hidden">
-                        <div class="px-4 py-3 border-b border-white/5 flex items-center gap-3 bg-[#161616] z-20 relative">
-                            <i data-lucide="monitor" class="w-4 h-4 text-gray-500"></i>
-                            <span class="text-[10px] text-gray-400 tracking-wider uppercase font-medium">CTR: 2.1% ➔ 8.4%</span>
-                        </div>
-                        <div class="slider-wrapper relative w-full aspect-video overflow-hidden group select-none">
-                            <img src="images/before-after/final1.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="After" />
-                            <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Final Thumbnail</div>
-                            <div class="before-image absolute inset-0 w-full h-full z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                                <img src="images/before-after/raw1.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="Before" />
-                                <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-gray-400 text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Raw Images</div>
-                            </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0 p-0 touch-none" />
-                            <div class="slider-handle absolute top-0 bottom-0 w-[2px] bg-red-500 z-20 pointer-events-none shadow-[0_0_15px_rgba(220,38,38,0.8)]" style="left: 50%; transform: translateX(-50%);">
-                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-black border border-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]">
-                                    <i data-lucide="chevrons-left-right" class="w-4 h-4"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Transformation 2 -->
-                <div class="fade-in bg-[#0a0a0a] rounded-2xl border border-white/5 p-2 shadow-xl hover:border-red-500/30 transition-colors duration-500" style="transition-delay: 200ms;">
-                    <div class="bg-[#111] rounded-xl overflow-hidden">
-                        <div class="px-4 py-3 border-b border-white/5 flex items-center gap-3 bg-[#161616] z-20 relative">
-                            <i data-lucide="monitor" class="w-4 h-4 text-gray-500"></i>
-                            <span class="text-[10px] text-gray-400 tracking-wider uppercase font-medium">+25K Views in 24h</span>
-                        </div>
-                        <div class="slider-wrapper relative w-full aspect-video overflow-hidden group select-none">
-                            <img src="images/before-after/final2.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="After" />
-                            <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Final Thumbnail</div>
-                            <div class="before-image absolute inset-0 w-full h-full z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                                <img src="images/before-after/raw2.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="Before" />
-                                <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-gray-400 text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Raw Images</div>
-                            </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0 p-0 touch-none" />
-                            <div class="slider-handle absolute top-0 bottom-0 w-[2px] bg-red-500 z-20 pointer-events-none shadow-[0_0_15px_rgba(220,38,38,0.8)]" style="left: 50%; transform: translateX(-50%);">
-                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-black border border-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]">
-                                    <i data-lucide="chevrons-left-right" class="w-4 h-4"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Transformation 3 -->
-                <div class="fade-in bg-[#0a0a0a] rounded-2xl border border-white/5 p-2 shadow-xl hover:border-red-500/30 transition-colors duration-500" style="transition-delay: 100ms;">
-                    <div class="bg-[#111] rounded-xl overflow-hidden">
-                        <div class="px-4 py-3 border-b border-white/5 flex items-center gap-3 bg-[#161616] z-20 relative">
-                            <i data-lucide="monitor" class="w-4 h-4 text-gray-500"></i>
-                            <span class="text-[10px] text-gray-400 tracking-wider uppercase font-medium">CTR: 3.5% ➔ 11.2%</span>
-                        </div>
-                        <div class="slider-wrapper relative w-full aspect-video overflow-hidden group select-none">
-                            <img src="images/before-after/final3.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="After" />
-                            <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Final Thumbnail</div>
-                            <div class="before-image absolute inset-0 w-full h-full z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                                <img src="images/before-after/raw3.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="Before" />
-                                <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-gray-400 text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Raw Images</div>
-                            </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0 p-0 touch-none" />
-                            <div class="slider-handle absolute top-0 bottom-0 w-[2px] bg-red-500 z-20 pointer-events-none shadow-[0_0_15px_rgba(220,38,38,0.8)]" style="left: 50%; transform: translateX(-50%);">
-                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-black border border-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]">
-                                    <i data-lucide="chevrons-left-right" class="w-4 h-4"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Transformation 4 -->
-                <div class="fade-in bg-[#0a0a0a] rounded-2xl border border-white/5 p-2 shadow-xl hover:border-red-500/30 transition-colors duration-500" style="transition-delay: 300ms;">
-                    <div class="bg-[#111] rounded-xl overflow-hidden">
-                        <div class="px-4 py-3 border-b border-white/5 flex items-center gap-3 bg-[#161616] z-20 relative">
-                            <i data-lucide="monitor" class="w-4 h-4 text-gray-500"></i>
-                            <span class="text-[10px] text-gray-400 tracking-wider uppercase font-medium">+500K Views</span>
-                        </div>
-                        <div class="slider-wrapper relative w-full aspect-video overflow-hidden group select-none">
-                            <img src="images/before-after/final4.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="After" />
-                            <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Final Thumbnail</div>
-                            <div class="before-image absolute inset-0 w-full h-full z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                                <img src="images/before-after/raw4.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="Before" />
-                                <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-gray-400 text-[10px] px-3 py-1.5 rounded z-0 uppercase border border-white/10">Raw Images</div>
-                            </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0 p-0 touch-none" />
-                            <div class="slider-handle absolute top-0 bottom-0 w-[2px] bg-red-500 z-20 pointer-events-none shadow-[0_0_15px_rgba(220,38,38,0.8)]" style="left: 50%; transform: translateX(-50%);">
-                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-black border border-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]">
-                                    <i data-lucide="chevrons-left-right" class="w-4 h-4"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <!-- THIS CONTAINER IS NOW POPULATED DYNAMICALLY BY JAVASCRIPT -->
+            <div id="transformations-container" class="grid grid-cols-2 gap-3 sm:gap-8 md:gap-12">
+               <!-- JavaScript will inject all Before/After sliders here perfectly -->
             </div>
         </div>
     </section>
@@ -296,41 +196,37 @@
             
             <!-- Contact Buttons Row -->
             <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
-                
-                <!-- WhatsApp Button -->
                 <a href="https://wa.me/919193730992" target="_blank" class="flex items-center justify-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition-colors">
                     <i data-lucide="message-circle" class="w-5 h-5"></i>
                     Message on WhatsApp
                 </a>
-
-                <!-- Instagram Button -->
                 <a href="https://instagram.com/anshu.psds" target="_blank" class="flex items-center justify-center gap-2 bg-transparent border border-white/20 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/10 transition-colors">
                     <i data-lucide="instagram" class="w-5 h-5"></i>
                     @anshu.psds
                 </a>
-
-                <!-- Email Button -->
                 <a href="mailto:agrianshu@gmail.com" class="flex items-center justify-center gap-2 bg-transparent border border-white/20 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/10 transition-colors">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                     agrianshu@gmail.com
                 </a>
-
             </div>
         </div>
     </section>
 
     <!-- VIEW ALL MODAL (HIDDEN BY DEFAULT) -->
-    <div id="thumbnail-modal" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300 overflow-y-auto pt-24 pb-12 px-6">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="flex justify-between items-center mb-8">
+    <div id="thumbnail-modal" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300 overflow-y-auto pt-24 pb-12 px-4 sm:px-6">
+        
+        <!-- Floating, fixed close button that stays on screen when scrolling -->
+        <button id="close-modal-btn" class="fixed top-4 right-4 sm:top-8 sm:right-8 z-[110] text-gray-300 hover:text-white bg-[#111]/80 hover:bg-white/10 p-3 rounded-full transition-colors border border-white/20 shadow-2xl backdrop-blur-md cursor-pointer">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <div class="max-w-[1400px] mx-auto mt-4 sm:mt-0">
+            <div class="mb-8">
                 <h3 class="text-2xl md:text-4xl font-semibold text-white tracking-tight">All Thumbnails</h3>
-                <button id="close-modal-btn" class="text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 p-3 rounded-full transition-colors border border-white/10">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
             </div>
             
-            <!-- THIS GRID IS NOW POPULATED DYNAMICALLY BY JAVASCRIPT -->
-            <div id="modal-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Grid automatically uses 2 columns on phone, 3 on tablet, 4 on desktop -->
+            <div id="modal-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
                <!-- JavaScript will automatically inject the thumbnails here -->
             </div>
         </div>
@@ -339,12 +235,15 @@
     <!-- SIMPLE JAVASCRIPT FOR FUNCTIONALITY -->
     <script>
         // =================================================================
-        // 🖼️ HOW TO ADD MORE THUMBNAILS:
-        // Change the number below to however many thumbnails you have in 
-        // your images/grid/ folder! (e.g. if you have 30, change it to 30)
-        // Ensure they are named exactly: thumb1.jpeg, thumb2.jpeg, etc.
+        // ⚙️ SETTINGS:
+        // Adjust these numbers based on how many images you drop in your folders!
         // =================================================================
-        const TOTAL_THUMBNAILS = 10; 
+        const TOTAL_GRID_THUMBNAILS = 10; 
+        
+        // This is the maximum number of Before/After sliders it will check for.
+        // If you only have 4 in your folder, it will only show 4! 
+        // If an image is missing, the code magically deletes that frame.
+        const MAX_TRANSFORMATIONS = 50; 
         
         // 1. Initialize Icons
         lucide.createIcons();
@@ -362,15 +261,14 @@
             document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
         });
 
-        // 3. Dynamic Thumbnail Generation
+        // 3. Dynamic Generation (Grid Gallery & Modal)
         const scrollContainer = document.getElementById('scroll-container');
         const modalGrid = document.getElementById('modal-grid');
         
         let galleryHTMLBlock = '<div class="scroll-content flex gap-6 md:gap-10 shrink-0">';
         let modalHTMLBlock = '';
 
-        for (let i = 1; i <= TOTAL_THUMBNAILS; i++) {
-            // Replaced pointer-events-none with cursor-pointer so the hover pop effect works!
+        for (let i = 1; i <= TOTAL_GRID_THUMBNAILS; i++) {
             galleryHTMLBlock += `
                 <div class="shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] aspect-video rounded-2xl group relative bg-black border border-white/10 transition-all duration-500 ease-out hover:-translate-y-6 hover:scale-[1.08] hover:shadow-[0_20px_50px_rgba(220,38,38,0.3)] hover:border-red-500/50 hover:z-50 overflow-hidden cursor-pointer">
                     <img src="images/grid/thumb${i}.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -387,24 +285,54 @@
         if (modalGrid) modalGrid.innerHTML = modalHTMLBlock;
         if (scrollContainer) scrollContainer.innerHTML = galleryHTMLBlock + galleryHTMLBlock;
 
-        // 4. Auto-Scrolling Logic (Only pauses when actively clicking/dragging the scrollbar)
+        // 4. Dynamic Generation (Before & After Transformations)
+        const transformationsContainer = document.getElementById('transformations-container');
+        let transformationsHTML = '';
+
+        for (let i = 1; i <= MAX_TRANSFORMATIONS; i++) {
+            // MAGIC TRICK: We add an "onerror" to the <img> tag. 
+            // If raw5.jpeg doesn't exist, it instantly deletes this entire HTML block!
+            transformationsHTML += `
+                <div class="transformation-item fade-in bg-[#0a0a0a] rounded-xl sm:rounded-2xl border border-white/5 p-1 sm:p-2 shadow-xl hover:border-red-500/30 transition-colors duration-500" style="transition-delay: ${(i%4)*100}ms;">
+                    <div class="bg-[#111] rounded-lg sm:rounded-xl overflow-hidden">
+                        
+                        <!-- Header text (CTR, Views) has been completely removed! -->
+                        
+                        <div class="slider-wrapper relative w-full aspect-video overflow-hidden group select-none pointer-events-none">
+                            <img src="images/before-after/final${i}.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="After" onerror="this.closest('.transformation-item').remove();" />
+                            <div class="absolute top-1 sm:top-4 right-1 sm:right-4 bg-black/80 backdrop-blur-md text-white text-[5px] sm:text-[10px] px-1.5 sm:px-3 py-0.5 sm:py-1.5 rounded z-0 uppercase border border-white/10 whitespace-nowrap">Final Thumbnail</div>
+                            
+                            <div class="before-image absolute inset-0 w-full h-full z-10">
+                                <img src="images/before-after/raw${i}.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="Before" onerror="this.closest('.transformation-item').remove();" />
+                                <div class="absolute top-1 sm:top-4 left-1 sm:left-4 bg-black/80 backdrop-blur-md text-gray-400 text-[5px] sm:text-[10px] px-1.5 sm:px-3 py-0.5 sm:py-1.5 rounded z-0 uppercase border border-white/10 whitespace-nowrap">Raw Images</div>
+                            </div>
+                            <div class="slider-handle absolute top-0 bottom-0 w-[1px] sm:w-[2px] bg-red-500 z-20 shadow-[0_0_15px_rgba(220,38,38,0.8)]" style="left: 50%; transform: translateX(-50%);">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 sm:w-8 sm:h-8 bg-black border border-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-transform duration-300">
+                                    <i data-lucide="chevrons-left-right" class="w-2.5 h-2.5 sm:w-4 sm:h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        if (transformationsContainer) transformationsContainer.innerHTML = transformationsHTML;
+
+        // 5. Auto-Scrolling Gallery Logic
         let isUserInteracting = false;
         
-        // Listen for mouse click down on the container (like grabbing the scrollbar)
         scrollContainer.addEventListener('mousedown', () => isUserInteracting = true);
         window.addEventListener('mouseup', () => isUserInteracting = false);
         
-        // Listen for touches (like swiping on mobile)
         scrollContainer.addEventListener('touchstart', () => isUserInteracting = true);
         window.addEventListener('touchend', () => isUserInteracting = false);
 
-        // Listen for mouse wheel scrolling (pauses auto-scroll briefly so they don't fight)
         scrollContainer.addEventListener('wheel', () => {
             isUserInteracting = true;
             clearTimeout(scrollContainer.wheelTimeout);
             scrollContainer.wheelTimeout = setTimeout(() => {
                 isUserInteracting = false;
-            }, 200); // Resume auto-scroll 200ms after you stop scrolling your mouse wheel
+            }, 200); 
         });
 
         function autoScroll() {
@@ -419,7 +347,7 @@
         
         requestAnimationFrame(autoScroll);
 
-        // 5. View All Modal Functionality
+        // 6. View All Modal Functionality
         const modal = document.getElementById('thumbnail-modal');
         const openBtn = document.getElementById('open-modal-btn');
         const closeBtn = document.getElementById('close-modal-btn');
@@ -444,18 +372,24 @@
             });
         }
 
-        // 6. Before/After Slider Functionality
-        document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
-            const input = wrapper.querySelector('.slider-input');
-            const beforeImage = wrapper.querySelector('.before-image');
-            const handle = wrapper.querySelector('.slider-handle');
+        // 7. Automatic Before/After Slider Animation
+        function autoAnimateSliders() {
+            const time = Date.now() / 1500; 
+            const percentage = 50 + (Math.sin(time) * 35); 
 
-            input.addEventListener('input', (e) => {
-                const sliderValue = e.target.value;
-                beforeImage.style.clipPath = `polygon(0 0, ${sliderValue}% 0, ${sliderValue}% 100%, 0 100%)`;
-                handle.style.left = `${sliderValue}%`;
+            document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+                const beforeImage = wrapper.querySelector('.before-image');
+                const handle = wrapper.querySelector('.slider-handle');
+
+                if (beforeImage && handle) {
+                    beforeImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+                    handle.style.left = `${percentage}%`;
+                }
             });
-        });
+            requestAnimationFrame(autoAnimateSliders);
+        }
+        
+        requestAnimationFrame(autoAnimateSliders);
     </script>
 </body>
 </html>
