@@ -105,7 +105,6 @@
             <!-- Right Profile Image -->
             <div class="fade-in flex-1 w-full flex justify-center md:justify-end relative" style="transition-delay: 400ms;">
                 <div class="relative w-full max-w-[350px] md:max-w-[400px]">
-                    <!-- Stats badge -->
                     <div class="hidden md:flex absolute -left-12 top-10 bg-[#111] border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-xl rotate-[-6deg] hover:rotate-0 hover:scale-105 transition-all duration-500 z-20">
                         <div class="flex flex-col gap-1">
                             <div class="flex items-center gap-2 text-gray-400 text-[10px] uppercase font-bold tracking-wider">
@@ -116,10 +115,8 @@
                         </div>
                     </div>
 
-                    <!-- Main Image -->
                     <div class="relative w-full aspect-[4/5] bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-2 z-10 group hover:-translate-y-4 hover:shadow-[0_20px_60px_rgba(220,38,38,0.15)] transition-all duration-500 overflow-hidden">
                         <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-[#050505]">
-                            <!-- Profile Image -->
                             <img src="images/profile/me.jpeg" alt="Anshu Aagri" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700" />
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 opacity-90"></div>
                         </div>
@@ -159,7 +156,7 @@
             </div>
         </div>
 
-        <!-- VIEW ALL BUTTON (Below Gallery) -->
+        <!-- VIEW ALL BUTTON -->
         <div class="fade-in w-full flex justify-center mt-6" style="transition-delay: 300ms;">
             <button id="open-modal-btn" class="flex items-center justify-center gap-3 text-[12px] font-bold uppercase tracking-widest text-white bg-red-600 hover:bg-red-700 transition-all duration-300 px-8 py-4 rounded-full shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)] hover:-translate-y-1">
                 <i data-lucide="layout-grid" class="w-5 h-5"></i> View All Thumbnails
@@ -185,6 +182,31 @@
         </div>
     </section>
 
+    <!-- NEW: VIDEO EDITING (REELS) SECTION -->
+    <section id="reels-section" class="py-24 md:py-32 relative z-10 bg-[#000000] border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2 class="fade-in text-3xl md:text-5xl font-medium tracking-tight text-white mb-4">
+                High-Retention <br class="hidden md:block"/> 
+                <span class="text-red-500">Video Editing.</span>
+            </h2>
+            <div class="fade-in flex flex-col sm:flex-row items-start sm:items-center gap-6" style="transition-delay: 100ms;">
+                <span class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i> Tap to unmute & pause gallery
+                </span>
+            </div>
+        </div>
+
+        <!-- Horizontal Scrolling Reels Container -->
+        <div class="fade-in relative w-full pt-4 pb-8" style="transition-delay: 200ms;">
+            <div class="absolute top-0 bottom-0 left-0 w-16 md:w-[10vw] bg-gradient-to-r from-[#000000] to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-16 md:w-[10vw] bg-gradient-to-l from-[#000000] to-transparent z-20 pointer-events-none"></div>
+
+            <div id="reels-container" class="flex gap-6 md:gap-10 overflow-x-auto custom-scrollbar px-[5vw] pb-8 pt-4">
+               <!-- JavaScript will automatically inject the reels here -->
+            </div>
+        </div>
+    </section>
+
     <!-- CONTACT / FOOTER SECTION -->
     <section id="contact" class="py-32 relative z-10 bg-black flex flex-col items-center border-t border-white/5">
         <div class="max-w-2xl mx-auto px-6 text-center fade-in">
@@ -194,7 +216,6 @@
             <h2 class="text-4xl md:text-6xl font-medium tracking-tight text-white mb-6">Ready to scale?</h2>
             <p class="text-gray-400 mb-10">Let's craft the perfect thumbnail for your next video.</p>
             
-            <!-- Contact Buttons Row -->
             <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
                 <a href="https://wa.me/919193730992" target="_blank" class="flex items-center justify-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition-colors">
                     <i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -212,23 +233,28 @@
         </div>
     </section>
 
-    <!-- VIEW ALL MODAL (HIDDEN BY DEFAULT) -->
+    <!-- VIEW ALL THUMBNAILS MODAL -->
     <div id="thumbnail-modal" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300 overflow-y-auto pt-24 pb-12 px-4 sm:px-6">
-        
-        <!-- Floating, fixed close button that stays on screen when scrolling -->
         <button id="close-modal-btn" class="fixed top-4 right-4 sm:top-8 sm:right-8 z-[110] text-gray-300 hover:text-white bg-[#111]/80 hover:bg-white/10 p-3 rounded-full transition-colors border border-white/20 shadow-2xl backdrop-blur-md cursor-pointer">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
-
         <div class="max-w-[1400px] mx-auto mt-4 sm:mt-0">
             <div class="mb-8">
                 <h3 class="text-2xl md:text-4xl font-semibold text-white tracking-tight">All Thumbnails</h3>
             </div>
-            
-            <!-- Grid automatically uses 2 columns on phone, 3 on tablet, 4 on desktop -->
             <div id="modal-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
-               <!-- JavaScript will automatically inject the thumbnails here -->
+               <!-- Injected via JS -->
             </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN VIDEO MODAL -->
+    <div id="video-modal" class="fixed inset-0 z-[150] bg-black/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+        <button id="close-video-btn" class="fixed top-4 right-4 sm:top-8 sm:right-8 z-[160] text-gray-300 hover:text-white bg-[#111]/80 hover:bg-white/10 p-3 rounded-full transition-colors border border-white/20 shadow-2xl backdrop-blur-md cursor-pointer">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="relative w-full max-w-[400px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+            <video id="modal-video-player" class="w-full h-full object-cover" controls autoplay playsinline></video>
         </div>
     </div>
 
@@ -236,14 +262,10 @@
     <script>
         // =================================================================
         // ⚙️ SETTINGS:
-        // Adjust these numbers based on how many images you drop in your folders!
         // =================================================================
-        const TOTAL_GRID_THUMBNAILS = 10; 
-        
-        // This is the maximum number of Before/After sliders it will check for.
-        // If you only have 4 in your folder, it will only show 4! 
-        // If an image is missing, the code magically deletes that frame.
+        const TOTAL_GRID_THUMBNAILS = 18;  // UPDATED TO 18!
         const MAX_TRANSFORMATIONS = 50; 
+        const TOTAL_REELS = 6; 
         
         // 1. Initialize Icons
         lucide.createIcons();
@@ -290,14 +312,9 @@
         let transformationsHTML = '';
 
         for (let i = 1; i <= MAX_TRANSFORMATIONS; i++) {
-            // MAGIC TRICK: We add an "onerror" to the <img> tag. 
-            // If raw5.jpeg doesn't exist, it instantly deletes this entire HTML block!
             transformationsHTML += `
                 <div class="transformation-item fade-in bg-[#0a0a0a] rounded-xl sm:rounded-2xl border border-white/5 p-1 sm:p-2 shadow-xl hover:border-red-500/30 transition-colors duration-500" style="transition-delay: ${(i%4)*100}ms;">
                     <div class="bg-[#111] rounded-lg sm:rounded-xl overflow-hidden">
-                        
-                        <!-- Header text (CTR, Views) has been completely removed! -->
-                        
                         <div class="slider-wrapper relative w-full aspect-video overflow-hidden group select-none pointer-events-none">
                             <img src="images/before-after/final${i}.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="After" onerror="this.closest('.transformation-item').remove();" />
                             <div class="absolute top-1 sm:top-4 right-1 sm:right-4 bg-black/80 backdrop-blur-md text-white text-[5px] sm:text-[10px] px-1.5 sm:px-3 py-0.5 sm:py-1.5 rounded z-0 uppercase border border-white/10 whitespace-nowrap">Final Thumbnail</div>
@@ -318,28 +335,152 @@
         }
         if (transformationsContainer) transformationsContainer.innerHTML = transformationsHTML;
 
-        // 5. Auto-Scrolling Gallery Logic
-        let isUserInteracting = false;
-        
-        scrollContainer.addEventListener('mousedown', () => isUserInteracting = true);
-        window.addEventListener('mouseup', () => isUserInteracting = false);
-        
-        scrollContainer.addEventListener('touchstart', () => isUserInteracting = true);
-        window.addEventListener('touchend', () => isUserInteracting = false);
+        // 5. Dynamic Generation (Video Reels)
+        const reelsContainer = document.getElementById('reels-container');
+        let reelsHTMLBlock = '<div class="scroll-content flex gap-6 md:gap-10 shrink-0">';
 
-        scrollContainer.addEventListener('wheel', () => {
-            isUserInteracting = true;
-            clearTimeout(scrollContainer.wheelTimeout);
-            scrollContainer.wheelTimeout = setTimeout(() => {
-                isUserInteracting = false;
-            }, 200); 
+        for (let i = 1; i <= TOTAL_REELS; i++) {
+            reelsHTMLBlock += `
+                <div class="reel-wrapper shrink-0 w-[65vw] sm:w-[40vw] md:w-[25vw] lg:w-[18vw] aspect-[9/16] rounded-2xl group relative bg-black border border-white/10 transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_20px_50px_rgba(220,38,38,0.3)] hover:border-red-500/50 overflow-hidden cursor-pointer">
+                    <video src="videos/reel${i}.mp4" class="w-full h-full object-cover pointer-events-none" autoplay loop muted playsinline onerror="this.parentElement.remove();"></video>
+                    
+                    <div class="fullscreen-btn absolute top-3 right-3 bg-black/70 p-2 rounded-full backdrop-blur-md border border-white/10 transition-colors hover:bg-red-600 shadow-lg z-20">
+                        <i data-lucide="maximize" class="w-4 h-4 text-white"></i>
+                    </div>
+
+                    <div class="absolute bottom-3 right-3 bg-black/70 p-2 rounded-full backdrop-blur-md border border-white/10 transition-colors group-hover:bg-red-600 shadow-lg z-20">
+                        <i data-lucide="volume-x" class="w-4 h-4 text-white icon-muted"></i>
+                        <i data-lucide="volume-2" class="w-4 h-4 text-white icon-unmuted hidden"></i>
+                    </div>
+                </div>
+            `;
+        }
+        reelsHTMLBlock += '</div>';
+
+        if (reelsContainer) {
+            reelsContainer.innerHTML = reelsHTMLBlock + reelsHTMLBlock;
+            lucide.createIcons(); 
+        }
+
+        let isReelPlayingActively = false; 
+
+        // Reels Interactions
+        document.querySelectorAll('.reel-wrapper').forEach(wrapper => {
+            const video = wrapper.querySelector('video');
+            const iconMuted = wrapper.querySelector('.icon-muted');
+            const iconUnmuted = wrapper.querySelector('.icon-unmuted');
+            const fsBtn = wrapper.querySelector('.fullscreen-btn');
+
+            wrapper.addEventListener('click', (e) => {
+                if (e.target.closest('.fullscreen-btn')) return;
+
+                if (video.muted) {
+                    document.querySelectorAll('.reel-wrapper video').forEach(v => {
+                        v.muted = true;
+                        const w = v.closest('.reel-wrapper');
+                        w.querySelector('.icon-muted')?.classList.remove('hidden');
+                        w.querySelector('.icon-unmuted')?.classList.add('hidden');
+                    });
+                    
+                    video.muted = false;
+                    video.currentTime = 0; 
+                    iconMuted.classList.add('hidden');
+                    iconUnmuted.classList.remove('hidden');
+                    isReelPlayingActively = true; 
+                } else {
+                    video.muted = true;
+                    iconMuted.classList.remove('hidden');
+                    iconUnmuted.classList.add('hidden');
+                    isReelPlayingActively = false; 
+                }
+            });
+
+            fsBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+
+                const videoModal = document.getElementById('video-modal');
+                const modalPlayer = document.getElementById('modal-video-player');
+                
+                isReelPlayingActively = true;
+                document.querySelectorAll('.reel-wrapper video').forEach(v => {
+                    v.muted = true;
+                    const w = v.closest('.reel-wrapper');
+                    w.querySelector('.icon-muted')?.classList.remove('hidden');
+                    w.querySelector('.icon-unmuted')?.classList.add('hidden');
+                });
+
+                modalPlayer.src = video.src;
+                videoModal.classList.remove('hidden');
+                setTimeout(() => {
+                    videoModal.classList.remove('opacity-0');
+                    videoModal.classList.add('opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        const videoModal = document.getElementById('video-modal');
+        const closeVideoBtn = document.getElementById('close-video-btn');
+        const modalPlayer = document.getElementById('modal-video-player');
+
+        if (closeVideoBtn && videoModal) {
+            closeVideoBtn.addEventListener('click', () => {
+                videoModal.classList.remove('opacity-100');
+                videoModal.classList.add('opacity-0');
+                setTimeout(() => {
+                    videoModal.classList.add('hidden');
+                    modalPlayer.pause(); 
+                    modalPlayer.src = ''; 
+                }, 300);
+                document.body.style.overflow = 'auto'; 
+                isReelPlayingActively = false; 
+            });
+        }
+
+        // 6. Auto-Scrolling Logic
+        let isUserInteractingThumbnails = false;
+        let isUserInteractingReels = false;
+        
+        if(scrollContainer) {
+            scrollContainer.addEventListener('mousedown', () => isUserInteractingThumbnails = true);
+            scrollContainer.addEventListener('touchstart', () => isUserInteractingThumbnails = true);
+            scrollContainer.addEventListener('wheel', () => {
+                isUserInteractingThumbnails = true;
+                clearTimeout(scrollContainer.wheelTimeout);
+                scrollContainer.wheelTimeout = setTimeout(() => isUserInteractingThumbnails = false, 200); 
+            });
+        }
+
+        if(reelsContainer) {
+            reelsContainer.addEventListener('mousedown', () => isUserInteractingReels = true);
+            reelsContainer.addEventListener('touchstart', () => isUserInteractingReels = true);
+            reelsContainer.addEventListener('wheel', () => {
+                isUserInteractingReels = true;
+                clearTimeout(reelsContainer.wheelTimeout);
+                reelsContainer.wheelTimeout = setTimeout(() => isUserInteractingReels = false, 200); 
+            });
+        }
+
+        window.addEventListener('mouseup', () => {
+            isUserInteractingThumbnails = false;
+            isUserInteractingReels = false;
+        });
+        window.addEventListener('touchend', () => {
+            isUserInteractingThumbnails = false;
+            isUserInteractingReels = false;
         });
 
         function autoScroll() {
-            if (!isUserInteracting) {
+            if (scrollContainer && !isUserInteractingThumbnails) {
                 scrollContainer.scrollLeft += 1.5; 
                 if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
                     scrollContainer.scrollLeft = 0;
+                }
+            }
+            if (reelsContainer && !isUserInteractingReels && !isReelPlayingActively) {
+                reelsContainer.scrollLeft += 1.5; 
+                if (reelsContainer.scrollLeft >= reelsContainer.scrollWidth / 2) {
+                    reelsContainer.scrollLeft = 0;
                 }
             }
             requestAnimationFrame(autoScroll);
@@ -347,32 +488,32 @@
         
         requestAnimationFrame(autoScroll);
 
-        // 6. View All Modal Functionality
-        const modal = document.getElementById('thumbnail-modal');
-        const openBtn = document.getElementById('open-modal-btn');
-        const closeBtn = document.getElementById('close-modal-btn');
+        // 7. View All Modal Functionality
+        const thumbModal = document.getElementById('thumbnail-modal');
+        const openThumbBtn = document.getElementById('open-modal-btn');
+        const closeThumbBtn = document.getElementById('close-modal-btn');
 
-        if(openBtn && closeBtn && modal) {
-            openBtn.addEventListener('click', () => {
-                modal.classList.remove('hidden');
+        if(openThumbBtn && closeThumbBtn && thumbModal) {
+            openThumbBtn.addEventListener('click', () => {
+                thumbModal.classList.remove('hidden');
                 setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                    modal.classList.add('opacity-100');
+                    thumbModal.classList.remove('opacity-0');
+                    thumbModal.classList.add('opacity-100');
                 }, 10);
                 document.body.style.overflow = 'hidden'; 
             });
 
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('opacity-100');
-                modal.classList.add('opacity-0');
+            closeThumbBtn.addEventListener('click', () => {
+                thumbModal.classList.remove('opacity-100');
+                thumbModal.classList.add('opacity-0');
                 setTimeout(() => {
-                    modal.classList.add('hidden');
+                    thumbModal.classList.add('hidden');
                 }, 300); 
                 document.body.style.overflow = 'auto'; 
             });
         }
 
-        // 7. Automatic Before/After Slider Animation
+        // 8. Automatic Before/After Slider Animation
         function autoAnimateSliders() {
             const time = Date.now() / 1500; 
             const percentage = 50 + (Math.sin(time) * 35); 
